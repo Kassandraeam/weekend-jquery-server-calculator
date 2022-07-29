@@ -25,23 +25,24 @@
 - [x] after test, type "start": "node server/server.js"
 
 # server.js setup #
-- [ ] const express = require('express');
-- [ ] const app = express();
-- [ ] const PORT = 5000;
-- [ ] app.listen(PORT, (){
+- [x] const express = require('express');
+- [x] const app = express();
+- [x] const PORT = 5000;
+- [x] app.listen(PORT, () => {
     console.log('listening on port', PORT)
 });
-- [ ] app.use(express.static('server/public'))
+- [x] app.use(express.static('server/public'))
 
 # index.html setup #
-- [ ] Link scripts and links in HTML
+- [x] Link scripts and links in HTML
 
 # REQUIRED FEATURES #
 
 # CALCULATOR #
-- [ ] 2 input values.
-- [ ] 4 buttons --> Select mathmatical operation (+, -, *, /)
-- [ ] 1 button --> Submit button:
+- [x] 1 input value.
+- [x] 4 buttons --> Select mathmatical operation (+, -, *, /)
+- [x] 1 input value.
+- [x] 1 button --> Equal sign, submit button:
     - [ ] On Click:
     - [ ] Captures inputs
     - [ ] Bundles inputs into an OBJECT
