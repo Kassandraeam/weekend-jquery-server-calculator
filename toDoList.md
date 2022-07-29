@@ -3,4 +3,4 @@
 
 # To do list #
 - [x] Test
-- [] test
+- [ ] test
