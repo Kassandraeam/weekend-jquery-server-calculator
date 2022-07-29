@@ -7,24 +7,24 @@
 
 # Folders setup #
 - [ ] Set up files
-- [ ] Get package.json --> type in terminal--> npm init --yes
-- [ ] Get express --> type in terminal --> npm install express
+- [x] Get package.json --> type in terminal--> npm init --yes
+- [x] Get express --> type in terminal --> npm install express
 - [ ] Make folders
-    - [ ] Folder: server
-        - [ ] File: server.js
-        - [ ] Folder: public
-            - [ ] File: index.html
-            - [ ] Folder: scripts
-                - [ ] File: client.js
-            - [ ] Folder: styles
-                - [ ] style.css
-            - [ ] Folder: vendors
-                - [ ] File: jQuery.js
+    - [x] Folder: server
+        - [x] File: server.js
+        - [x] Folder: public
+            - [x] File: index.html
+            - [x] Folder: scripts
+                - [x] File: client.js
+            - [x] Folder: styles
+                - [x] style.css
+            - [x] Folder: vendors
+                - [x] File: jQuery.js
 
 # Package.json setup #
-- [ ] after test, type "start": "node server/server.js"
+- [x] after test, type "start": "node server/server.js"
 
-# server.js setup#
+# server.js setup #
 - [ ] const express = require('express');
 - [ ] const app = express();
 - [ ] const PORT = 5000;
