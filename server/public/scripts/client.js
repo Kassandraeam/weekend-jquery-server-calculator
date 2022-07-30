@@ -36,16 +36,9 @@ function renderToDom(userInputs){
     $('#output').empty();
     for (let input of userInputs){
         $('#output').append(`
-            <li>${input.inputOne}</li>
-            <li>${input.inputTwo}</li>
+            <li>${input.inputOne}, ${input.inputTwo}</li>
         `)
     }
-    // for (let input of userInputs){
-    //     $('thingsGoHere').append(`
-    //     <li>${input.inputOne}</li>
-    //     <li>${input.inputTwo}</li>
-    //     `)
-    // }
 }
 
 //s

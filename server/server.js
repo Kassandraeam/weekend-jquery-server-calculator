@@ -4,6 +4,7 @@ const PORT = 5000;
 
 userInputsObject = [];
 
+app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static('server/public'));
 
 app.get('/userInputs', (req, res)=>{
