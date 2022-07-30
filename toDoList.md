@@ -6,10 +6,10 @@
 # TO DO LIST # 
 
 # Folders setup #
-- [ ] Set up files
+- [x] Set up files
 - [x] Get package.json --> type in terminal--> npm init --yes
 - [x] Get express --> type in terminal --> npm install express
-- [ ] Make folders
+- [x] Make folders
     - [x] Folder: server
         - [x] File: server.js
         - [x] Folder: public
@@ -44,9 +44,9 @@
 - [x] 1 input value.
 - [x] 1 button --> Equal sign, submit button:
     - [ ] On Click:
-    - [ ] Captures inputs
-    - [ ] Bundles inputs into an OBJECT
-    - [ ] Sends OBJECT to server via a POST.
+        - [ ] Captures inputs
+        - [ ] Bundles inputs into an OBJECT
+        - [ ] Sends OBJECT to server via a POST.
 - [ ] 1 button --> clears the input fields.
 
 # HISTORY # 
