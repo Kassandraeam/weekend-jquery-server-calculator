@@ -47,7 +47,7 @@
         - [ ] Captures inputs
         - [ ] Bundles inputs into an OBJECT
         - [ ] Sends OBJECT to server via a POST.
-- [ ] 1 button --> clears the input fields.
+- [x] 1 button --> clears the input fields.a
 
 # HISTORY # 
 - [ ] Keep historical record of all math operations and solutions.
