@@ -50,6 +50,6 @@
 - [x] 1 button --> clears the input fields.
 
 # HISTORY # 
-- [x] Keep historical record of all math operations and solutions.
-- [x] Append all previous calculations on DOM when it loads using GET request.
+- [] Keep historical record of all math operations and solutions.
+- [] Append all previous calculations on DOM when it loads using GET request.
 - [ ] Update when new calculation is made.

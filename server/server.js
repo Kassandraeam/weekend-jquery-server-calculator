@@ -1,6 +1,11 @@
 const express = require('express');
 const app = express();
 const PORT = 5000;
+// let objectTotal = [];
+let result;
+let objectKeyOne;
+let objectKeyTwo;
+let objectKeyThree;
 
 userInputsObject = [];
 
@@ -18,31 +23,44 @@ app.get('/userInputs', (req, res)=>{
 //add 3 input, add numbers and operation to array.
 
 app.post('/userInputs', (req, res)=>{
+
     console.log('POST /userInputs');
     console.log('(2) Right now I have accessed the app.post')
     // console.log(`req body`, req.body);
     userInputsObject.push(req.body)
     res.sendStatus(200);
-    console.log(`HERE IS MY OBJECT:`, userInputsObject[0]);
-    console.log(`HERE IS INPUTONE:`, userInputsObject[0]['inputOne']);
-    console.log(`HERE IS INPUTTWO:`, userInputsObject[0]['inputTwo']);
-    console.log(`HERE IS MY OPERATION:`, userInputsObject[0]['operation']);
+    // console.log(`HERE IS MY OBJECT:`, userInputsObject[0]);
+    objectTotal = userInputsObject[0];
+    // console.log(`HERE IS INPUTONE:`, userInputsObject[0]['inputOne']);
+    objectKeyOne = Number(userInputsObject[0]['inputOne']);
+    // console.log(`HERE IS INPUTTWO:`, userInputsObject[0]['inputTwo']);
+    objectKeyTwo = Number(userInputsObject[0]['inputTwo']);
+    // console.log(`HERE IS MY OPERATION:`, userInputsObject[0]['operation']);
+    objectKeyThree = (userInputsObject[0]['operation']);
     //I need an if else statement in here, if userInputsObject[0]['operation']) is equal to +, add userInputs[0]['inputOne'] and userInputs[0]['inputTwo'] together.
     //also need to check typeOf 
+    calculator()
+    console.log('RESULT:', result);
+    // console.log(objectKeyOne, objectKeyTwo, objectKeyThree);
+    // var math_it_up = {
+    //     '+': function (x, y) { return x + y },
+    //     '-': function (x, y) { return x - y }
+    // }​​​​​​​;
 
-    let checkType = userInputsObject[0]['inputOne'];
-    console.log('Type of below.');
-    console.log(typeof(checkType)); // userInputsObject[0]['inputOne'] is a string. turn into number store as variable?
+    // let checkType = userInputsObject[0]['inputOne'];
+    // console.log('Type of below.');
+    // console.log(typeof(checkType)); // userInputsObject[0]['inputOne'] is a string. turn into number store as variable?
 
-    let storeInputOneAsInt = Number(userInputsObject[0]['inputOne'])
-    console.log(storeInputOneAsInt);
+    // let storeInputOneAsInt = Number(userInputsObject[0]['inputOne'])
+    // console.log(storeInputOneAsInt);
 
 
 })
 
-function calculator(){
+// function calculator(userInputsObject){
+    
     // maybe I push object into empty array here and then clear it at the end.
-    // loops through the length of the array.
+    // loops through the length of the array. use a for in loop?
     // convert userInputsObject[0]['inputOne'] to a number
     // convert userInputsObject[0]['inputTwo'] to a number
     // store those in variables.
@@ -50,6 +68,32 @@ function calculator(){
     // conditional that checks the operation. if operation contains '+', store inputOne + inputTwo into result variable? Do the same for the other operations.
     // push to req.body?
     // clear array.
+// }
+
+function calculator(){
+
+    switch (objectKeyThree){
+        case '+':
+            result = objectKeyOne + objectKeyTwo;
+            // console.log(result);
+            break;
+        case '-':
+            result = objectKeyOne - objectKeyTwo;
+            // console.log(result);
+            break;
+        case '*':
+            result = objectKeyOne * objectKeyTwo;
+            // console.log(result);
+            break;
+        case '/':
+            result = objectKeyOne / objectKeyTwo;
+            // console.log(result);
+            break;
+        default:
+            console.log('need an operator');
+            break;
+    }
+    
 }
 
 app.listen(PORT, function() {
@@ -64,7 +108,9 @@ app.listen(PORT, function() {
 
 function testHello(){
     console.log(`hello`);
-    console.log(userInputsObject) // got inputOne, inputTwo, and operation successfully
+    console.log(userInputsObject);
+    console.log('hello: LOOK HERE:', objectKeyOne, objectKeyTwo, objectKeyThree);
+     // got inputOne, inputTwo, and operation successfully
 }
 
 
