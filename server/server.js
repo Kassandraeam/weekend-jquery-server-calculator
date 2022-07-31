@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const PORT = 5000;
-// let objectTotal = [];
 let result;
 let objectKeyOne;
 let objectKeyTwo;
@@ -16,131 +15,63 @@ app.get('/userInputs', (req, res)=>{
     console.log('GET /userInputs')
     console.log('(1) Right now I have accessed the app.get')
     testHello();
-    // console.log(userInputsObject)
     res.send(userInputsObject);
 })
 
-//add 3 input, add numbers and operation to array.
 
 app.post('/userInputs', (req, res)=>{
 
-    console.log('POST /userInputs');
-    console.log('(2) Right now I have accessed the app.post')
-    // console.log(`req body`, req.body);
     userInputsObject.push(req.body)
     res.sendStatus(200);
-    // console.log(`HERE IS MY OBJECT:`, userInputsObject[0]);
+    console.log('POST /userInputs');
+    console.log('(2) Right now I have accessed the app.post')
     objectTotal = userInputsObject[0];
-    // console.log(`HERE IS INPUTONE:`, userInputsObject[0]['inputOne']);
     objectKeyOne = Number(userInputsObject[0]['inputOne']);
-    // console.log(`HERE IS INPUTTWO:`, userInputsObject[0]['inputTwo']);
     objectKeyTwo = Number(userInputsObject[0]['inputTwo']);
-    // console.log(`HERE IS MY OPERATION:`, userInputsObject[0]['operation']);
     objectKeyThree = (userInputsObject[0]['operation']);
-    //I need an if else statement in here, if userInputsObject[0]['operation']) is equal to +, add userInputs[0]['inputOne'] and userInputs[0]['inputTwo'] together.
-    //also need to check typeOf 
     calculator()
     console.log('RESULT:', result);
-    // console.log(objectKeyOne, objectKeyTwo, objectKeyThree);
-    // var math_it_up = {
-    //     '+': function (x, y) { return x + y },
-    //     '-': function (x, y) { return x - y }
-    // }​​​​​​​;
-
-    // let checkType = userInputsObject[0]['inputOne'];
-    // console.log('Type of below.');
-    // console.log(typeof(checkType)); // userInputsObject[0]['inputOne'] is a string. turn into number store as variable?
-
-    // let storeInputOneAsInt = Number(userInputsObject[0]['inputOne'])
-    // console.log(storeInputOneAsInt);
-
 
 })
 
-// function calculator(userInputsObject){
-    
-    // maybe I push object into empty array here and then clear it at the end.
-    // loops through the length of the array. use a for in loop?
-    // convert userInputsObject[0]['inputOne'] to a number
-    // convert userInputsObject[0]['inputTwo'] to a number
-    // store those in variables.
-
-    // conditional that checks the operation. if operation contains '+', store inputOne + inputTwo into result variable? Do the same for the other operations.
-    // push to req.body?
-    // clear array.
-// }
 
 function calculator(){
 
+for (let result of userInputsObject) {
     switch (objectKeyThree){
         case '+':
             result = objectKeyOne + objectKeyTwo;
-            // console.log(result);
+            return result;
             break;
         case '-':
             result = objectKeyOne - objectKeyTwo;
-            // console.log(result);
+            return result;
             break;
         case '*':
             result = objectKeyOne * objectKeyTwo;
-            // console.log(result);
+            return result;
             break;
         case '/':
             result = objectKeyOne / objectKeyTwo;
-            // console.log(result);
+            return result;
             break;
         default:
             console.log('need an operator');
             break;
-    }
-    
-}
+    };
+};
+    userInputsObject['result'] = result;
+    userInputsObject.push(result);
+    console.log('this should be the result:', userInputsObject.result);
+};
 
 app.listen(PORT, function() {
     console.log('listening on port', PORT)
 });
 
-//I need calculations/logic on this side, and I need to push it back to the client.
-
-/*
-    When the user selects the + button, it needs to 
-*/
-
 function testHello(){
     console.log(`hello`);
-    console.log(userInputsObject);
-    console.log('hello: LOOK HERE:', objectKeyOne, objectKeyTwo, objectKeyThree);
+    // console.log('should have results:', userInputsObject);
+    // console.log('hello: LOOK HERE:', objectKeyOne, objectKeyTwo, objectKeyThree);
      // got inputOne, inputTwo, and operation successfully
 }
-
-
-// let operators = {
-//     '+': (inputOne, inputTwo) => inputOne + inputTwo,
-//     '-': (inputOne, inputTwo) => inputOne - inputTwo,
-//     '*': (inputOne, inputTwo) => inputOne * inputTwo,
-//     '/': (inputOne, inputTwo) => inputOne / inputTwo
-// };
-
-// client needs to send something here, server know what they selected, perform 
-
-//function here
-
-//equal button add 
-// hold 3 parameters on server
-// perform function on server
-// return to client 
-
-// you're sending the operation that you run by clicking that specific button
-// click +, input 1 + input 2 = output.
-// click -, input 1 - input 2 = output.
-
-
-
-// 1) Add operation to array in getInputs()
-// 2) make function with all three inputs
-// 3) Server sends back data (completed operation) that is added to getInputs();
-
-// just send back + sign as a string 
-// Then we figure run an if conditional if string contains operation, run that math operation.
-
-// if operation id === + run something.
