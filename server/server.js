@@ -34,8 +34,23 @@ app.post('/userInputs', (req, res)=>{
     console.log('Type of below.');
     console.log(typeof(checkType)); // userInputsObject[0]['inputOne'] is a string. turn into number store as variable?
 
-    
+    let storeInputOneAsInt = Number(userInputsObject[0]['inputOne'])
+    console.log(storeInputOneAsInt);
+
+
 })
+
+function calculator(){
+    // maybe I push object into empty array here and then clear it at the end.
+    // loops through the length of the array.
+    // convert userInputsObject[0]['inputOne'] to a number
+    // convert userInputsObject[0]['inputTwo'] to a number
+    // store those in variables.
+
+    // conditional that checks the operation. if operation contains '+', store inputOne + inputTwo into result variable? Do the same for the other operations.
+    // push to req.body?
+    // clear array.
+}
 
 app.listen(PORT, function() {
     console.log('listening on port', PORT)
