@@ -10,6 +10,7 @@ app.use(express.static('server/public'));
 app.get('/userInputs', (req, res)=>{
     console.log('GET /userInputs')
     console.log('(1) Right now I have accessed the app.get')
+    testHello();
     // console.log(userInputsObject)
     res.send(userInputsObject);
 })
@@ -19,10 +20,21 @@ app.get('/userInputs', (req, res)=>{
 app.post('/userInputs', (req, res)=>{
     console.log('POST /userInputs');
     console.log('(2) Right now I have accessed the app.post')
-    testHello();
     // console.log(`req body`, req.body);
     userInputsObject.push(req.body)
     res.sendStatus(200);
+    console.log(`HERE IS MY OBJECT:`, userInputsObject[0]);
+    console.log(`HERE IS INPUTONE:`, userInputsObject[0]['inputOne']);
+    console.log(`HERE IS INPUTTWO:`, userInputsObject[0]['inputTwo']);
+    console.log(`HERE IS MY OPERATION:`, userInputsObject[0]['operation']);
+    //I need an if else statement in here, if userInputsObject[0]['operation']) is equal to +, add userInputs[0]['inputOne'] and userInputs[0]['inputTwo'] together.
+    //also need to check typeOf 
+
+    let checkType = userInputsObject[0]['inputOne'];
+    console.log('Type of below.');
+    console.log(typeof(checkType)); // userInputsObject[0]['inputOne'] is a string. turn into number store as variable?
+
+    
 })
 
 app.listen(PORT, function() {
@@ -36,8 +48,10 @@ app.listen(PORT, function() {
 */
 
 function testHello(){
-    console.log('Hello');
+    console.log(`hello`);
+    console.log(userInputsObject) // got inputOne, inputTwo, and operation successfully
 }
+
 
 // let operators = {
 //     '+': (inputOne, inputTwo) => inputOne + inputTwo,

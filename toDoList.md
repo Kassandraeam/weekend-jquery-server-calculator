@@ -43,13 +43,13 @@
 - [x] 4 buttons --> Select mathmatical operation (+, -, *, /)
 - [x] 1 input value.
 - [x] 1 button --> Equal sign, submit button:
-    - [ ] On Click:
-        - [ ] Captures inputs
-        - [ ] Bundles inputs into an OBJECT
-        - [ ] Sends OBJECT to server via a POST.
-- [x] 1 button --> clears the input fields.a
+    - [x] On Click:
+        - [x] Captures inputs
+        - [x] Bundles inputs into an OBJECT
+        - [x] Sends OBJECT to server via a POST.
+- [x] 1 button --> clears the input fields.
 
 # HISTORY # 
-- [ ] Keep historical record of all math operations and solutions.
-- [ ] Append all previous calculations on DOM when it loads using GET request.
+- [x] Keep historical record of all math operations and solutions.
+- [x] Append all previous calculations on DOM when it loads using GET request.
 - [ ] Update when new calculation is made.
